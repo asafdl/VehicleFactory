@@ -1,5 +1,6 @@
 package model;
 
+import model.Interfaces.IVehicleFactory;
 import model.concreteClasses.ElectricCar;
 import model.concreteClasses.FieldMotorcycle;
 import model.concreteClasses.FieldTruck;
@@ -13,17 +14,6 @@ import model.eNums.eVehicleTypes;
 
 public class HerzeliaVehicleFactory implements IVehicleFactory {
 	private final String LOCATION = "Herzelia";
-	private static HerzeliaVehicleFactory instance = null;
-
-	private HerzeliaVehicleFactory() {
-	}
-
-	public static HerzeliaVehicleFactory getInstance() {
-		if (instance == null) {
-			return new HerzeliaVehicleFactory();
-		}
-		return instance;
-	}
 
 	@Override
 	public Vehicle buildVehicle(eVehicleTypes vehicleType) {

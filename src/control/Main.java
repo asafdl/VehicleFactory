@@ -8,7 +8,6 @@ public class Main {
 		Menu menu = new Menu();
 		try {
 			menu.start();
-			System.out.println("sdfj");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

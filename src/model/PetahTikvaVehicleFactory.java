@@ -1,5 +1,6 @@
 package model;
 
+import model.Interfaces.IVehicleFactory;
 import model.concreteClasses.ElectricCar;
 import model.concreteClasses.FieldMotorcycle;
 import model.concreteClasses.FieldTruck;
@@ -8,23 +9,11 @@ import model.concreteClasses.HoverMotorcycle;
 import model.concreteClasses.HoverTruck;
 import model.concreteClasses.SportCar;
 import model.concreteClasses.SportMotorcycle;
-import model.eNums.eHerzeliaBuildableVehicles;
 import model.eNums.ePetahTikvaBuildableVehicles;
 import model.eNums.eVehicleTypes;
 
-public class PetahTikvaVehicleFactory implements IVehicleFactory{
+public class PetahTikvaVehicleFactory implements IVehicleFactory {
 	private final String LOCATION = "PetahTikva";
-	private static PetahTikvaVehicleFactory instance = null;
-
-	private PetahTikvaVehicleFactory() { }
-
-	public static PetahTikvaVehicleFactory getInstance() {
-		if (instance == null) {
-			return new PetahTikvaVehicleFactory();
-		}
-		return instance;
-	}
-
 
 	public Vehicle buildVehicle(eVehicleTypes vehicleType) {
 		if (ePetahTikvaBuildableVehicles.contains(vehicleType.toString())) {

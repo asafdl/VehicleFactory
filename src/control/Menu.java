@@ -1,7 +1,7 @@
 package control;
 import java.io.IOException;
 import java.util.Scanner;
-import model.VehicleCommand;
+
 import model.eNums.*;
 import model.concreteClasses.*;
 public class Menu {
