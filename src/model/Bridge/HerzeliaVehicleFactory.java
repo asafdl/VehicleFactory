@@ -1,6 +1,7 @@
-package model;
+package model.Bridge;
 
 import model.Interfaces.IVehicleFactory;
+import model.Vehicle;
 import model.concreteClasses.ElectricCar;
 import model.concreteClasses.FieldMotorcycle;
 import model.concreteClasses.FieldTruck;
@@ -9,14 +10,15 @@ import model.concreteClasses.HoverMotorcycle;
 import model.concreteClasses.HoverTruck;
 import model.concreteClasses.SportCar;
 import model.concreteClasses.SportMotorcycle;
-import model.eNums.ePetahTikvaBuildableVehicles;
+import model.eNums.eHerzeliaBuildableVehicles;
 import model.eNums.eVehicleTypes;
 
-public class PetahTikvaVehicleFactory implements IVehicleFactory {
-	private final String LOCATION = "PetahTikva";
+public class HerzeliaVehicleFactory implements IVehicleFactory {
+	private final String LOCATION = "Herzelia";
 
+	@Override
 	public Vehicle buildVehicle(eVehicleTypes vehicleType) {
-		if (ePetahTikvaBuildableVehicles.contains(vehicleType.toString())) {
+		if (eHerzeliaBuildableVehicles.contains(vehicleType.toString())) {
 			switch (vehicleType) {
 			case ELECTRICCAR:
 				return new ElectricCar();
@@ -43,4 +45,5 @@ public class PetahTikvaVehicleFactory implements IVehicleFactory {
 			return null;
 		}
 	}
+
 }

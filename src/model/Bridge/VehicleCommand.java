@@ -1,9 +1,7 @@
-package control;
+package model.Bridge;
 
-import model.HerzeliaVehicleFactory;
 import model.Interfaces.IVehicleFactory;
 import model.ObjectPoolPatternAndSingleton.PartWarehouse;
-import model.PetahTikvaVehicleFactory;
 import model.Vehicle;
 import model.eNums.eHerzeliaBuildableVehicles;
 import model.eNums.ePetahTikvaBuildableVehicles;
