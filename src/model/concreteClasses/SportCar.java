@@ -2,16 +2,14 @@ package model.concreteClasses;
 
 import model.Car;
 import model.BuilderPattern.Engine;
+import model.Flyweight.EngineFactory;
 import model.Interfaces.ISport;
 import model.eNums.ePowerType;
+import model.eNums.eVehicleTypes;
 
 public class SportCar extends Car implements ISport{
 	public SportCar() {
-		engine = new Engine.EngineBuilder(ePowerType.GAS)
-				.milage(0)
-				.efficiancy((float)0.9)
-				.numberOfPistons(36)
-				.build();
+		engine = EngineFactory.getEngine(eVehicleTypes.SPORTCAR);
 
 	}
 	@Override

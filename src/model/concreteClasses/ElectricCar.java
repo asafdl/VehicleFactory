@@ -2,18 +2,16 @@ package model.concreteClasses;
 
 import model.Car;
 import model.BuilderPattern.Engine;
+import model.Flyweight.EngineFactory;
 import model.Interfaces.IElectric;
 import model.eNums.ePowerType;
+import model.eNums.eVehicleTypes;
 
 public class ElectricCar extends Car implements IElectric{
 
 	@Override
 	public void defineElectricEngine() {
-		engine = new Engine.EngineBuilder(ePowerType.ELECTRIC)
-				.milage(0)
-				.efficiancy((float)0.8)
-				.numberOfPistons(28)
-				.build();
+		engine = EngineFactory.getEngine(eVehicleTypes.ELECTRICCAR);
 		
 	}
 	public void show() {

@@ -1,18 +1,16 @@
 package model.concreteClasses;
 
 import model.BuilderPattern.Engine;
+import model.Flyweight.EngineFactory;
 import model.Interfaces.ISport;
 import model.Motorcycle;
 import model.eNums.ePowerType;
+import model.eNums.eVehicleTypes;
 
 public class SportMotorcycle extends Motorcycle implements ISport{
 
 	public SportMotorcycle() {
-		engine = new Engine.EngineBuilder(ePowerType.ELECTRIC)
-				.milage(0)
-				.efficiancy((float)0.9)
-				.numberOfPistons(28)
-				.build();
+		engine = EngineFactory.getEngine(eVehicleTypes.SPORTMOTORCYCLE);
 
 	}
 

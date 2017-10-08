@@ -1,17 +1,15 @@
 package model.concreteClasses;
 
 import model.BuilderPattern.Engine;
+import model.Flyweight.EngineFactory;
 import model.Interfaces.I4x4;
 import model.Motorcycle;
 import model.eNums.ePowerType;
+import model.eNums.eVehicleTypes;
 
 public class FieldMotorcycle extends Motorcycle implements I4x4{
 	public FieldMotorcycle() {
-		engine = engine = new Engine.EngineBuilder(ePowerType.GAS)
-				.milage(0)
-				.efficiancy((float)0.4)
-				.numberOfPistons(14)
-				.build();
+		engine = EngineFactory.getEngine(eVehicleTypes.FIELDMOTORCYCLE);
 
 	}
 	@Override

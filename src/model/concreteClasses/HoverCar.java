@@ -2,16 +2,14 @@ package model.concreteClasses;
 
 import model.Car;
 import model.BuilderPattern.Engine;
+import model.Flyweight.EngineFactory;
 import model.Interfaces.IHoverable;
 import model.eNums.ePowerType;
+import model.eNums.eVehicleTypes;
 
 public class HoverCar extends Car implements IHoverable {
 	public HoverCar() {
-		engine = new Engine.EngineBuilder(ePowerType.GAS)
-				.milage(0)
-				.efficiancy((float)0.8)
-				.numberOfPistons(28)
-				.build();
+		engine = EngineFactory.getEngine(eVehicleTypes.HOVERCAR);
 
 	}
 	public void hover() {}
